@@ -1,0 +1,225 @@
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --muted: #9aa6b2;
+    --accent: #7dd3fc;
+    --gap: 16px;
+    --tools-w: 320px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, Segoe UI, Arial, sans-serif;
+    background: linear-gradient(180deg, #071224 0%, #041021 100%);
+    color: #e6eef6;
+    padding: 16px;
+}
+
+.hdr { 
+    padding: 12px 0; 
+}
+
+/* LOGO STYLING */
+.logo-heading {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+/* The custom "o" replacement */
+.logo-symbol {
+    display: inline-block;
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffdb4d, #ff9f00 60%, #e67e00);
+    box-shadow: 0 0 12px 2px rgba(255, 159, 0, 0.4);
+    margin: 0 0.05em;
+    position: relative;
+    top: 0.05em; /* Alignment */
+}
+
+.title {
+    margin-top: 10px;
+}
+
+.title h2 { 
+    margin: 0; 
+    font-size: 20px; 
+    letter-spacing: 0.6px;
+    font-weight: 400;
+}
+
+.title p { 
+    margin: 6px 0 0; 
+    color: var(--muted); 
+    font-size: 13px; 
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr var(--tools-w);
+    gap: var(--gap);
+    margin-top: 12px;
+    align-items: start;
+}
+
+.map-area {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.map-area h3 {
+    margin: 0 0 6px 0;
+}
+
+#map {
+    height: 60vh;
+    border-radius: 8px;
+    background: #0b2130;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.map-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.step-card {
+    padding: 16px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #18426a 0%, #0c2b4e 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step-card-header {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #e6eef6;
+    padding: 10px 15px;
+    /* Lightened gradient  */
+    background: linear-gradient(90deg, #3a689b 0%, #1c4d82 100%);
+    border-radius: 8px;
+}
+
+.step-card .body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.step-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #bdcad9;
+}
+
+.step-card label {
+    display: block;
+    font-size: 14px;
+    color: #e6eef6;
+    margin-bottom: 5px;
+}
+
+.step-card select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: #071523;
+    color: #eaf6ff;
+    font-size: 14px;
+}
+
+.step-card .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: #022;
+}
+
+.step-card .button:hover {
+    transform: translateY(-2px);
+}
+
+.step-card .button.light-blue-gradient {
+    background: linear-gradient(90deg, #00BFFF 0%, #87CEFA 100%);
+}
+
+.step-card .button.dark-blue {
+    background: #072836;
+    color: var(--accent);
+}
+
+.step-card .button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.step-card .info {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #bdcad9;
+}
+
+.step-card .info svg {
+    margin-right: 8px;
+}
+
+/* TOOLS SIDEBAR */
+.tools {
+    background: var(--card);
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* spacing between buttons */
+}
+
+.tools h3 { margin: 0 0 6px 0; }
+
+.tools button,
+.tools a {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #072836;
+    color: var(--accent);
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.tools button:hover,
+.tools a:hover { background: #093447; }
+
+@media(max-width: 900px) {
+    .main-grid { grid-template-columns: 1fr; row-gap: 16px; }
+    .tools { order: 2; }
+}
